@@ -1,0 +1,13 @@
+### POST request to create a patient
+POST http://localhost:4000/patients
+Content-Type: application/json
+
+{
+  "name": "Sadid Shaikh",
+  "email": "shaikhsadid431@gmail.com",
+  "address": "Undri, Pune",
+  "dateOfBirth": "2002-10-05",
+  "registeredDate": "2025-03-17"
+}
+
+###
