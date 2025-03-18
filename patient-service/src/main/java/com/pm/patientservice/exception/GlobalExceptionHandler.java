@@ -31,11 +31,11 @@ public class GlobalExceptionHandler {
         return ResponseEntity.ok().body(errors);
     }
 
-    @ExceptionHandler(EmailAlreadyExistsException.class)
-    public ResponseEntity<Map<String, String>> handleEmailAlreadyExistsException(EmailAlreadyExistsException ex) {
+    @ExceptionHandler({EmailAlreadyExistsException.class, PatientNotFoundException.class})
+    public ResponseEntity<Map<String, String>> handleCustomExceptions(RuntimeException ex) {
         log.warn(ex.getMessage());
         Map<String, String> errors = new HashMap<>();
         errors.put("message", ex.getMessage());
-        return ResponseEntity.ok().body(errors);
+        return ResponseEntity.badRequest().body(errors);
     }
 }
