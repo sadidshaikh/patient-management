@@ -1,5 +1,6 @@
 ### PUT request to update a patient
 PUT http://localhost:4004/api/patients/223e4567-e89b-12d3-a456-426614174014
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
