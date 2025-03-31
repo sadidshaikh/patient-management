@@ -1,5 +1,5 @@
 ### GT request to validate token
-GET http://localhost:4004/auth/validate
+GET http://lb-c5ea28d4.elb.localhost.localstack.cloud:4004/auth/validate
 Authorization: Bearer {{token}}
 
 ###
