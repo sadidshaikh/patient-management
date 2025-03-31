@@ -188,7 +188,7 @@ public class LocalStack extends Stack {
                         .build()));
 
         Map<String, String> envVars = new HashMap<>();
-        envVars.put("SPRING_KAFKA_BOOTSTRAP_SERVERS", "localhost.localstack.cloud.4510, localhost.localstack.cloud.4510, localhost.localstack.cloud.4511, localhost.localstack.cloud.4512");
+        envVars.put("SPRING_KAFKA_BOOTSTRAP_SERVERS", "localhost.localstack.cloud:4510, localhost.localstack.cloud:4511, localhost.localstack.cloud:4512");
 
         if (additionalEnvVars != null) {
             envVars.putAll(additionalEnvVars);
