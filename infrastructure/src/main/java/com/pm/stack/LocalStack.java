@@ -197,7 +197,7 @@ public class LocalStack extends Stack {
         if (db != null) {
             envVars.put("SPRING_DATASOURCE_URL", "jdbc:postgresql://%s:%s/%s-db".formatted(
                     db.getDbInstanceEndpointAddress(),
-                    db.getInstanceEndpoint(),
+                    db.getDbInstanceEndpointPort(),
                     imageName
             ));
             envVars.put("SPRING_DATASOURCE_USERNAME", "admin_user");
@@ -228,7 +228,7 @@ public class LocalStack extends Stack {
         ContainerDefinitionOptions containerOptions = ContainerDefinitionOptions.builder()
                 .image(ContainerImage.fromRegistry("api-gateway"))
                 .environment(Map.of(
-                        "SPRING_PROFILE_ACTIVE", "prod",
+                        "SPRING_PROFILES_ACTIVE", "prod",
                         "AUTH_SERVICE_URL", "http://host.docker.internal:4005"
                 ))
                 .portMappings(Stream.of(4004)
